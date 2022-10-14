@@ -12,7 +12,7 @@ pipeline{
 	}
         stage('checkout'){
             steps{
-                checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'Jenkinstoken', url: 'https://github.com/Indra7946/HelloWorldMaven.git']]])
+                checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'Jenkinstoken', url: 'https://github.com/Aayushi2503/HelloWorldMaven.git']]])
             }
         }
 
@@ -37,7 +37,7 @@ pipeline{
 post {
 	success {
 		emailext attachmentsPattern: '*.html', body: '''Hi All,
-	Below is the Health check report generated.''', mimeType: 'html', subject: 'Healthcheck Report', to: 'indrasenareddyjyothi@gmail.com'
+	Below is the Health check report generated.''', mimeType: 'html', subject: 'Healthcheck Report', to: 'aayushisingh221@gmail.com'
 
 	}
 }
